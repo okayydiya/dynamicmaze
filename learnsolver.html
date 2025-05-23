@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Learn Maze-Solving Algorithms</title>
+  <link rel="stylesheet" href="stylesolve.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/prismjs/themes/prism-tomorrow.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav id="navbar">
+    <a href="#bfs">BFS</a>
+    <a href="#dfs">DFS</a>
+    <a href="#deadend">Dead End Filling</a>
+    <a href="#astar">A*</a>
+    <a href="#dijkstras">Dijkstra's</a>
+    <a href="#greedybfs">Greedy BFS</a>
+    <a href="#wallfollower">Wall Follower</a>
+  </nav>
+
+  <!-- BFS Section -->
+  <section class="algo-section" id="bfs">
+    <h2>BFS (Breadth-First Search)</h2>
+    
+    <p><strong>Working:</strong></p>
+    <p>⭐Explores all neighbors at the current depth before going deeper</p>
+    <p>⭐Guarantees the shortest path in unweighted grids.</p>
+    <p>⭐Uses a queue (FIFO) to manage the nodes to visit.</p>
+    <p>⭐Best for unweighted graphs — finds the shortest path in terms of the number of edges.</p>
+    <p><strong>Time Complexity:</strong></p> O(V + E)</p>
+    <p><strong>Space Complexity:</strong> O(V)</p>
+    
+    <h3>Code:</h3>
+    <pre><code id="bfs-code" class="language-javascript">Loading BFS code…</code></pre>
+  </section>
+
+  
+  <!-- DFS Section -->
+  <section class="algo-section" id="dfs">
+    <h2>DFS (Depth-First Search)</h2>
+    
+    <p><strong>Working:</strong></p>
+    <p>⭐ Explores as deep as possible along each branch before backtracking.</p>
+    <p>⭐ Uses a stack (LIFO) or recursion to manage the traversal.</p>
+    <p>⭐ Does not guarantee the shortest path.</p>
+    <p><strong>Time Complexity:</strong> O(V + E)</p>
+    <p><strong>Space Complexity:</strong> O(V)</p>
+
+    <h3>Code:</h3>
+    <pre><code id="dfs-code" class="language-javascript">Loading DFS code…</code></pre>
+  </section>
+
+
+ <!-- Dead end filling Section -->
+  <section class="algo-section" id="def">
+    <h2>Dead End Filling</h2>
+    
+    <p><strong>Working:</strong></p>
+    <p>⭐ Identifies and fills all dead-end paths in the maze except the correct path to the exit.</p>
+   <p>⭐ Iteratively removes paths that lead to dead ends by blocking vertices with only one open edge (neighbor).</p>
+    <p>⭐ Continues until only the solution path from start to finish remains.</p>
+    <p>⭐ Simple and effective for maze solving, especially in perfect mazes without loops.</p>
+    <p><strong>Time Complexity:</strong> O(V + E)</p>
+     <p><strong>Space Complexity:</strong> O(1)</p>
+
+    <h3>Code:</h3>
+    <pre><code id="def-code" class="language-javascript">Loading Dead End fillingcode…</code></pre>
+  </section>
+
+
+
+
+  <!-- dijkstra's Section -->
+  <section class="algo-section" id="dijkstras">
+    <h2>DIJKSTRA'S</h2>
+
+    <p><strong>Working:</strong></p>
+    <p>⭐ Finds the shortest path in graphs with non-negative weights.</p>
+    <p>⭐ Uses a priority queue to always pick the node with the smallest tentative distance.</p>
+    <p>⭐ Relaxes neighbors if a shorter path is found through the current node.</p>
+    <p><strong>Time Complexity:</strong> O((V + E) log V)</p>
+    <p><strong>Space Complexity:</strong> O(V)</p>
+    
+    
+    <h3>Code:</h3>
+    <pre><code id="dijkstras-code" class="language-javascript">Loading Dijkstra's code…</code></pre>
+  </section>
+
+
+
+
+  <!-- A* Section -->
+  <section class="algo-section" id="astar">
+    <h2>A* Search</h2>
+    
+    <p><strong>Working:</strong></p>
+    <p>⭐ Extension of Dijkstra’s algorithm with a heuristic to guide the search.</p>
+    <p>⭐ Uses f(n) = g(n) + h(n), where:</p>
+    <p>  g(n) = cost from start to n, h(n) = estimated cost from n to goal.</p>
+    <p>⭐ Prioritizes nodes with the lowest estimated total cost.</p>
+    <p><strong>Time Complexity:</strong> O((V + E) log V)</p>
+    <p><strong>Space Complexity:</strong> O(V)</p>
+    
+    <h3>Code:</h3>
+    <pre><code id="astar-code" class="language-javascript">Loading A* code…</code></pre>
+  </section>
+
+
+
+  <!-- Greedy BFS Section -->
+  <section class="algo-section" id="greedybfs">
+    <h2>Greedy BFS</h2>
+    
+    <p><strong>Working:</strong></p>
+    <p>⭐ Uses only the heuristic function h(n) to choose the next node.</p>
+    <p>⭐ Fast but not guaranteed to find the shortest path.</p>
+    <p>⭐ Prioritizes nodes that appear closer to the goal, regardless of actual cost so far.</p>
+    <p><strong>Time Complexity:</strong> O((V + E) log V)</p>
+    <p><strong>Space Complexity:</strong> O(V)</p>
+   
+    <h3>Code:</h3>
+    <pre><code id="greedybfs-code" class="language-javascript">Loading Greedy BFS code…</code></pre>
+  </section>
+
+
+
+  <!--Wall Follower-->
+  <section class="algo-section" id="wallfollower">
+    <h2>Wall Follower</h2>
+    <p><strong>Working:</strong> </p>
+   
+    <p>⭐ Follows either the right or left wall of the maze continuously until the exit is found.</p>
+    <p>⭐ Works only in mazes where all walls are connected to the outer boundary (i.e., simply-connected mazes).</p>
+    <p>⭐ May go in loops in mazes with islands or disconnected sections.</p>
+    <p>⭐ Very simple and requires minimal memory — good for physical robots or basic maze solving.</p>
+    <p><strong>Time Complexity:</strong> O(V) in worst-case traversal of the entire maze.</p>
+    <p><strong>Space Complexity:</strong> O(1) — uses only constant space (just current position and direction).</p>
+    
+    <h3>Code:</h3>
+    <pre><code id="wallfollower-code" class="language-javascript">Loading Wall Follower code…</code></pre>
+  </section>
+
+
+
+
+  <!-- Scripts for fetching and syntax highlighting -->
+  <script src="https://cdn.jsdelivr.net/npm/prismjs/prism.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs/components/prism-javascript.min.js"></script>
+
+  <script>
+    const algos = [
+      { id: 'bfs', file: 'universalBFS.js' },
+      { id: 'dfs', file: 'universalDFS.js' },
+      { id: 'def', file: 'universalDeadEndFilling.js' },
+      { id: 'dijkstras', file: 'universalDijkstra.js' },
+      { id: 'astar', file: 'universalAStar.js' },
+      { id: 'greedybfs', file: 'universalGreedyBFS.js' },
+      { id: 'wallfollower', file: 'universalWallFollower.js' },
+    ];
+
+    algos.forEach(({ id, file }) => {
+      fetch(file)
+        .then(response => response.text())
+        .then(code => {
+          const codeElem = document.getElementById(id + '-code');
+          if (codeElem) {
+            codeElem.textContent = code;
+            Prism.highlightElement(codeElem);
+          }
+        })
+        .catch(() => {
+          const codeElem = document.getElementById(id + '-code');
+          if (codeElem) {
+            codeElem.textContent = 'Failed to load ' + file;
+          }
+        });
+    });
+  </script>
+
+</body>
+</html>
